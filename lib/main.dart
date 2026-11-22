@@ -28,6 +28,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  String pantalla = '';
+  void escribirNumero(String numero){
+    setState(() {
+      pantalla = pantalla + numero;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
               borderRadius: BorderRadius.circular(8),
             ),
             child: Text(
-              'r',
+              pantalla.isEmpty ? '0' : pantalla,
               textAlign: TextAlign.right,
               style: const TextStyle(fontSize: 28),
             ),
@@ -86,13 +93,13 @@ class _MyHomePageState extends State<MyHomePage> {
               FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
-                onPressed: null,
+                onPressed: () => escribirNumero('7'),
                 child: const Text('7'),
               ),
               FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
-                onPressed: null,
+                onPressed: () => escribirNumero('8'),
                 child: const Text('8'),
               ),
               FloatingActionButton(
