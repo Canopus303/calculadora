@@ -37,6 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Row(),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -62,7 +63,65 @@ class _MyHomePageState extends State<MyHomePage> {
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
                 onPressed: null,
+                child: const Text('/'),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              FloatingActionButton(
+                backgroundColor: Colors.black54,
+                foregroundColor: Colors.amber,
+                onPressed: null,
+                child: const Text('7'),
+              ),
+              FloatingActionButton(
+                backgroundColor: Colors.black54,
+                foregroundColor: Colors.amber,
+                onPressed: null,
+                child: const Text('8'),
+              ),
+              FloatingActionButton(
+                backgroundColor: Colors.black54,
+                foregroundColor: Colors.amber,
+                onPressed: null,
+                child: const Text('9'),
+              ),
+              FloatingActionButton(
+                backgroundColor: Colors.black54,
+                foregroundColor: Colors.amber,
+                onPressed: null,
+                child: const Text('x'),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              FloatingActionButton(
+                backgroundColor: Colors.black54,
+                foregroundColor: Colors.amber,
+                onPressed: null,
                 child: const Text('4'),
+              ),
+              FloatingActionButton(
+                backgroundColor: Colors.black54,
+                foregroundColor: Colors.amber,
+                onPressed: null,
+                child: const Text('5'),
+              ),
+              FloatingActionButton(
+                backgroundColor: Colors.black54,
+                foregroundColor: Colors.amber,
+                onPressed: null,
+                child: const Text('6'),
+              ),
+              FloatingActionButton(
+                backgroundColor: Colors.black54,
+                foregroundColor: Colors.amber,
+                onPressed: null,
+                child: const Text('-'),
               ),
             ],
           ),
@@ -91,65 +150,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
                 onPressed: null,
-                child: const Text('4'),
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              FloatingActionButton(
-                backgroundColor: Colors.black54,
-                foregroundColor: Colors.amber,
-                onPressed: null,
-                child: const Text('1'),
-              ),
-              FloatingActionButton(
-                backgroundColor: Colors.black54,
-                foregroundColor: Colors.amber,
-                onPressed: null,
-                child: const Text('2'),
-              ),
-              FloatingActionButton(
-                backgroundColor: Colors.black54,
-                foregroundColor: Colors.amber,
-                onPressed: null,
-                child: const Text('3'),
-              ),
-              FloatingActionButton(
-                backgroundColor: Colors.black54,
-                foregroundColor: Colors.amber,
-                onPressed: null,
-                child: const Text('4'),
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              FloatingActionButton(
-                backgroundColor: Colors.black54,
-                foregroundColor: Colors.amber,
-                onPressed: null,
-                child: const Text('1'),
-              ),
-              FloatingActionButton(
-                backgroundColor: Colors.black54,
-                foregroundColor: Colors.amber,
-                onPressed: null,
-                child: const Text('2'),
-              ),
-              FloatingActionButton(
-                backgroundColor: Colors.black54,
-                foregroundColor: Colors.amber,
-                onPressed: null,
-                child: const Text('3'),
-              ),
-              FloatingActionButton(
-                backgroundColor: Colors.black54,
-                foregroundColor: Colors.amber,
-                onPressed: null,
-                child: const Text('4'),
+                child: const Text('+'),
               ),
             ],
           ),
