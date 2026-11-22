@@ -33,11 +33,24 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Row(),
+          Container(
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.grey),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Text(
+              'r',
+              textAlign: TextAlign.right,
+              style: const TextStyle(fontSize: 28),
+            ),
+          ),
+          const SizedBox(height: 16),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -45,19 +58,19 @@ class _MyHomePageState extends State<MyHomePage> {
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
                 onPressed: null,
-                child: const Text('1'),
+                child: const Text('√'),
               ),
               FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
                 onPressed: null,
-                child: const Text('2'),
+                child: const Text('1/x'),
               ),
               FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
                 onPressed: null,
-                child: const Text('3'),
+                child: const Text('x2'),
               ),
               FloatingActionButton(
                 backgroundColor: Colors.black54,
