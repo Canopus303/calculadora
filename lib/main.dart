@@ -29,12 +29,44 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
+  //mostrar lo que pulsamos en los botones
   String pantalla = '';
   void escribirNumero(String numero){
     setState(() {
       pantalla = pantalla + numero;
     });
   }
+
+  void sumar(){
+
+  }
+
+  void restar(){
+
+  }
+
+  void multiplicar(){
+
+  }
+
+  void dividir(){
+
+  }
+
+  void raiz(){
+
+  }
+
+  void cuadrado(){
+
+  }
+
+  void fraccion(){
+
+  }
+
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
               borderRadius: BorderRadius.circular(8),
             ),
             child: Text(
-              pantalla.isEmpty ? '0' : pantalla,
+              pantalla.isEmpty ? '   ' : pantalla,
               textAlign: TextAlign.right,
               style: const TextStyle(fontSize: 28),
             ),
@@ -82,7 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
               FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
-                onPressed: null,
+                onPressed: () => escribirNumero('/'),
                 child: const Text('/'),
               ),
             ],
@@ -105,13 +137,13 @@ class _MyHomePageState extends State<MyHomePage> {
               FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
-                onPressed: null,
+                onPressed: () => escribirNumero('9'),
                 child: const Text('9'),
               ),
               FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
-                onPressed: null,
+                onPressed: () => escribirNumero('*'),
                 child: const Text('x'),
               ),
             ],
@@ -122,25 +154,25 @@ class _MyHomePageState extends State<MyHomePage> {
               FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
-                onPressed: null,
+                onPressed: () => escribirNumero('4'),
                 child: const Text('4'),
               ),
               FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
-                onPressed: null,
+                onPressed: () => escribirNumero('5'),
                 child: const Text('5'),
               ),
               FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
-                onPressed: null,
+                onPressed: () => escribirNumero('6'),
                 child: const Text('6'),
               ),
               FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
-                onPressed: null,
+                onPressed: () => escribirNumero('-'),
                 child: const Text('-'),
               ),
             ],
@@ -151,25 +183,25 @@ class _MyHomePageState extends State<MyHomePage> {
               FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
-                onPressed: null,
+                onPressed: () => escribirNumero('1'),
                 child: const Text('1'),
               ),
               FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
-                onPressed: null,
+                onPressed: () => escribirNumero('2'),
                 child: const Text('2'),
               ),
               FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
-                onPressed: null,
+                onPressed: () => escribirNumero('3'),
                 child: const Text('3'),
               ),
               FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
-                onPressed: null,
+                onPressed: () => escribirNumero('+'),
                 child: const Text('+'),
               ),
             ],
@@ -177,22 +209,17 @@ class _MyHomePageState extends State<MyHomePage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              
               FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
-                onPressed: null,
-                child: const Text('+/-'),
-              ),
-              FloatingActionButton(
-                backgroundColor: Colors.black54,
-                foregroundColor: Colors.amber,
-                onPressed: null,
+                onPressed: () => escribirNumero('0'),
                 child: const Text('0'),
               ),
               FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
-                onPressed: null,
+                onPressed: () => escribirNumero(','),
                 child: const Text(','),
               ),
               FloatingActionButton(
