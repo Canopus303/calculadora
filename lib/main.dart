@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:math_expressions/math_expressions.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,33 +38,33 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void sumar(){
+  void calcular() {
+  final operacion = pantalla.trim()
+      .replaceAll('×', '*')
+      .replaceAll('÷', '/')
+      .replaceAll(',', '.');
 
+  if (operacion.isEmpty) return;
+
+  String resultado;
+
+  try {
+    final expresion = GrammarParser().parse(operacion);
+    final valor = RealEvaluator(ContextModel()).evaluate(expresion);
+
+    resultado = valor.isFinite
+        ? valor.toString().replaceFirst(RegExp(r'\.0$'), '')
+        : 'Error';
+  } on FormatException {
+    resultado = 'Error';
+  } on ArgumentError {
+    resultado = 'Error';
   }
 
-  void restar(){
-
-  }
-
-  void multiplicar(){
-
-  }
-
-  void dividir(){
-
-  }
-
-  void raiz(){
-
-  }
-
-  void cuadrado(){
-
-  }
-
-  void fraccion(){
-
-  }
+  setState(() {
+    pantalla = resultado;
+  });
+}
 
   
 
@@ -225,7 +226,7 @@ class _MyHomePageState extends State<MyHomePage> {
               FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
-                onPressed: null,
+                onPressed: calcular,
                 child: const Text('='),
               ),
             ],
