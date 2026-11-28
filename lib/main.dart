@@ -145,7 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
                 onPressed: null,
-                child: const Text('√'),
+                child: const Text('²√x'),
                 )              
               ),
               Expanded(
@@ -163,7 +163,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
                 onPressed: null,
-                child: const Text('x2'),
+                child: Icon(Icons.superscript),
                 )              
               ),
               Expanded(
@@ -172,7 +172,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
                 onPressed: null,
-                child: const Text('/'),
+                child: const Text('÷'),
                 )              
               ),
             ],
@@ -213,7 +213,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   backgroundColor: Colors.black54,
                   foregroundColor: Colors.amber,
                   onPressed: () => escribirNumero('*'),
-                  child: const Text('x'),
+                  child: Icon(Icons.close),
                 )
               )
             ],
@@ -254,7 +254,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   backgroundColor: Colors.black54,
                   foregroundColor: Colors.amber,
                   onPressed: () => escribirNumero('-'),
-                  child: const Text('-'),
+                  child: Icon(Icons.remove),
                 ),
               ),
             ],
@@ -295,7 +295,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   backgroundColor: Colors.black54,
                   foregroundColor: Colors.amber,
                   onPressed: () => escribirNumero('+'),
-                  child: const Text('+'),
+                  child: Icon(Icons.add),
                 ),
               ),
             ],
@@ -327,7 +327,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   backgroundColor: Colors.black54,
                   foregroundColor: Colors.amber,
                   onPressed: calcular,
-                  child: const Text('='),
+                  child: Icon(Icons.drag_handle),
                 ),
               ),
             ],
