@@ -32,11 +32,19 @@ class _MyHomePageState extends State<MyHomePage> {
 
   //mostrar lo que pulsamos en los botones
   String pantalla = '';
-  void escribirNumero(String numero){
-    setState(() {
-      pantalla = pantalla + numero;
-    });
-  }
+  String operacionAnterior = '';
+  void escribirNumero(String numero) {
+  final esOperador = ['+', '-', '*', '/'].contains(numero);
+
+  setState(() {
+    if (pantalla == 'Error' || (operacionAnterior.isNotEmpty && !esOperador)) {
+      pantalla = '';
+    }
+
+    operacionAnterior = '';
+    pantalla += numero;
+  });
+}
 
   void calcular() {
   final operacion = pantalla.trim()
@@ -62,6 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   setState(() {
+    operacionAnterior = '$pantalla =';
     pantalla = resultado;
   });
 }
@@ -70,6 +79,19 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final partes = pantalla.split(RegExp(r'[+*/-]'));
+    final textoSuperior = (operacionAnterior.isNotEmpty
+            ? operacionAnterior
+            : pantalla)
+        .replaceAll('*', ' × ')
+        .replaceAll('/', ' ÷ ')
+        .replaceAll('+', ' + ')
+        .replaceAll('-', ' − ')
+        .trim();
+
+    final textoInferior = operacionAnterior.isNotEmpty
+        ? pantalla
+        : partes.lastWhere((parte) => parte.isNotEmpty, orElse: () => '0');
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -87,10 +109,23 @@ class _MyHomePageState extends State<MyHomePage> {
                 border: Border.all(color: Colors.grey),
                 borderRadius: BorderRadius.circular(8),
               ),
-              child: Text(
-                pantalla.isEmpty ? '   ' : pantalla,
-                textAlign: TextAlign.right,
-                style: const TextStyle(fontSize: 28),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Text(
+                    textoSuperior,
+                    textAlign: TextAlign.right,
+                    style: const TextStyle(fontSize: 18, color: (Colors.grey),
+                    )
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    textoInferior,
+                    textAlign: TextAlign.right,
+                    style: const TextStyle(fontSize: 36),
+                  )
+                ],
               ),
             ),
           ),
