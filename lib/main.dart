@@ -78,16 +78,20 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.grey),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: Text(
-              pantalla.isEmpty ? '   ' : pantalla,
-              textAlign: TextAlign.right,
-              style: const TextStyle(fontSize: 28),
+          Expanded(
+            child: Container(
+              width: double.infinity,
+              alignment: Alignment.centerRight,
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.grey),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Text(
+                pantalla.isEmpty ? '   ' : pantalla,
+                textAlign: TextAlign.right,
+                style: const TextStyle(fontSize: 28),
+              ),
             ),
           ),
           const SizedBox(height: 16),
