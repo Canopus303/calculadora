@@ -12,8 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
+      title: 'Calculadora',
+      theme: ThemeData(colorScheme: .fromSeed(seedColor: const Color.fromARGB(255, 129, 136, 63))),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -232,7 +232,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   pantalla = '($pantalla)^2';
                   calcular();
                 },
-                child: const Text('1/x'),
+                child: Icon(Icons.superscript),
                 )              
               ),
               Expanded(
@@ -244,7 +244,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   pantalla = '1/($pantalla)';
                   calcular();
                 },
-                child: Icon(Icons.superscript),
+                child: const Text('1/X'),
                 )              
               ),
               Expanded(
