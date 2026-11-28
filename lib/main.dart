@@ -216,7 +216,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
-                onPressed: null,
+                onPressed: (){
+                  pantalla = 'sqrt($pantalla)';
+                  calcular();
+                },
                 child: const Text('²√x'),
                 )              
               ),
@@ -225,7 +228,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
-                onPressed: null,
+                onPressed: (){
+                  pantalla = '($pantalla)^2';
+                  calcular();
+                },
                 child: const Text('1/x'),
                 )              
               ),
@@ -234,7 +240,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
-                onPressed: null,
+                onPressed: (){
+                  pantalla = '1/($pantalla)';
+                  calcular();
+                },
                 child: Icon(Icons.superscript),
                 )              
               ),
