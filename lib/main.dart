@@ -172,7 +172,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
-                onPressed: null,
+                onPressed: (){
+                  pantalla = '($pantalla)/100';
+                  calcular();
+                },
                 child: const Text('%'),
                 )              
               ),
