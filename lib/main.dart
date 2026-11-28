@@ -31,6 +31,39 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
   //mostrar lo que pulsamos en los botones
+  void borrarTodo() {
+    setState(() {
+      pantalla = '';
+      operacionAnterior = '';
+    });
+  }
+  void borrarEntrada() {
+    if (operacionAnterior.isNotEmpty || pantalla == 'Error') {
+      borrarTodo();
+      return;
+    }
+
+    setState(() {
+      // Quita el número del final, incluida su parte decimal.
+      pantalla = pantalla.replaceFirst(RegExp(r'[0-9.,]+$'), '');
+
+      // Si estábamos escribiendo un único número negativo, quita también el signo.
+      if (pantalla == '-') pantalla = '';
+    });
+  }
+  void borrarCaracter() {
+    if (pantalla == 'Error') {
+      borrarTodo();
+      return;
+    }
+
+    if (pantalla.isEmpty) return;
+
+    setState(() {
+      pantalla = pantalla.substring(0, pantalla.length - 1);
+      operacionAnterior = '';
+    });
+  }
   String pantalla = '';
   String operacionAnterior = '';
   void escribirNumero(String numero) {
@@ -68,12 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
     } on ArgumentError {
       resultado = 'Error';
   }
-  void borrarTodo() {
-    setState(() {
-      pantalla = '';
-      operacionAnterior = '';
-    });
-  }
+  
 
   setState(() {
     operacionAnterior = '$pantalla =';
@@ -153,7 +181,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
-                onPressed: null,
+                onPressed: borrarEntrada,
                 child: const Text('CE'),
                 )              
               ),
@@ -162,7 +190,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
-                onPressed: null,
+                onPressed: borrarTodo,
                 child: const Text('C'),
                 )              
               ),
@@ -171,7 +199,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
-                onPressed: null,
+                onPressed: borrarCaracter,
                 child: Icon(Icons.backspace_outlined),
                 )              
               ),
