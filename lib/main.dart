@@ -98,140 +98,237 @@ class _MyHomePageState extends State<MyHomePage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              FloatingActionButton(
+              Expanded(
+                child: 
+                  FloatingActionButton(
+                backgroundColor: Colors.black54,
+                foregroundColor: Colors.amber,
+                onPressed: null,
+                child: const Text('%'),
+                )              
+              ),
+              Expanded(
+                child: 
+                  FloatingActionButton(
+                backgroundColor: Colors.black54,
+                foregroundColor: Colors.amber,
+                onPressed: null,
+                child: const Text('CE'),
+                )              
+              ),
+              Expanded(
+                child: 
+                  FloatingActionButton(
+                backgroundColor: Colors.black54,
+                foregroundColor: Colors.amber,
+                onPressed: null,
+                child: const Text('C'),
+                )              
+              ),
+              Expanded(
+                child: 
+                  FloatingActionButton(
+                backgroundColor: Colors.black54,
+                foregroundColor: Colors.amber,
+                onPressed: null,
+                child: Icon(Icons.backspace_outlined),
+                )              
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Expanded(
+                child: 
+                  FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
                 onPressed: null,
                 child: const Text('√'),
+                )              
               ),
-              FloatingActionButton(
+              Expanded(
+                child: 
+                  FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
                 onPressed: null,
                 child: const Text('1/x'),
+                )              
               ),
-              FloatingActionButton(
+              Expanded(
+                child: 
+                  FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
                 onPressed: null,
                 child: const Text('x2'),
+                )              
               ),
-              FloatingActionButton(
+              Expanded(
+                child: 
+                  FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
-                onPressed: () => escribirNumero('/'),
+                onPressed: null,
                 child: const Text('/'),
+                )              
               ),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              FloatingActionButton(
+              Expanded(
+                child: 
+                FloatingActionButton(
                 backgroundColor: Colors.black54,
                 foregroundColor: Colors.amber,
                 onPressed: () => escribirNumero('7'),
                 child: const Text('7'),
+                )
               ),
-              FloatingActionButton(
-                backgroundColor: Colors.black54,
-                foregroundColor: Colors.amber,
-                onPressed: () => escribirNumero('8'),
-                child: const Text('8'),
+              Expanded(
+                child: 
+                FloatingActionButton(
+                  backgroundColor: Colors.black54,
+                  foregroundColor: Colors.amber,
+                  onPressed: () => escribirNumero('8'),
+                  child: const Text('8'),
+                ),
               ),
-              FloatingActionButton(
-                backgroundColor: Colors.black54,
-                foregroundColor: Colors.amber,
-                onPressed: () => escribirNumero('9'),
-                child: const Text('9'),
+              Expanded(
+                child: 
+                FloatingActionButton(
+                  backgroundColor: Colors.black54,
+                  foregroundColor: Colors.amber,
+                  onPressed: () => escribirNumero('9'),
+                  child: const Text('9'),
+                ),
               ),
-              FloatingActionButton(
-                backgroundColor: Colors.black54,
-                foregroundColor: Colors.amber,
-                onPressed: () => escribirNumero('*'),
-                child: const Text('x'),
+              Expanded(
+                child: 
+                FloatingActionButton(
+                  backgroundColor: Colors.black54,
+                  foregroundColor: Colors.amber,
+                  onPressed: () => escribirNumero('*'),
+                  child: const Text('x'),
+                )
+              )
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Expanded(
+                child: 
+                FloatingActionButton(
+                  backgroundColor: Colors.black54,
+                  foregroundColor: Colors.amber,
+                  onPressed: () => escribirNumero('4'),
+                  child: const Text('4'),
+                ),
+              ),
+              Expanded(
+                child: 
+                FloatingActionButton(
+                  backgroundColor: Colors.black54,
+                  foregroundColor: Colors.amber,
+                  onPressed: () => escribirNumero('5'),
+                  child: const Text('5'),
+                ),
+              ),
+              Expanded(
+                child: 
+                FloatingActionButton(
+                  backgroundColor: Colors.black54,
+                  foregroundColor: Colors.amber,
+                  onPressed: () => escribirNumero('6'),
+                  child: const Text('6'),
+                ),
+              ),
+              Expanded(
+                child: 
+                FloatingActionButton(
+                  backgroundColor: Colors.black54,
+                  foregroundColor: Colors.amber,
+                  onPressed: () => escribirNumero('-'),
+                  child: const Text('-'),
+                ),
               ),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              FloatingActionButton(
-                backgroundColor: Colors.black54,
-                foregroundColor: Colors.amber,
-                onPressed: () => escribirNumero('4'),
-                child: const Text('4'),
+              Expanded(
+                child: 
+                FloatingActionButton(
+                  backgroundColor: Colors.black54,
+                  foregroundColor: Colors.amber,
+                  onPressed: () => escribirNumero('1'),
+                  child: const Text('1'),
+                ),
               ),
-              FloatingActionButton(
-                backgroundColor: Colors.black54,
-                foregroundColor: Colors.amber,
-                onPressed: () => escribirNumero('5'),
-                child: const Text('5'),
+              Expanded(
+                child: 
+                FloatingActionButton(
+                  backgroundColor: Colors.black54,
+                  foregroundColor: Colors.amber,
+                  onPressed: () => escribirNumero('2'),
+                  child: const Text('2'),
+                ),
               ),
-              FloatingActionButton(
-                backgroundColor: Colors.black54,
-                foregroundColor: Colors.amber,
-                onPressed: () => escribirNumero('6'),
-                child: const Text('6'),
+              Expanded(
+                child: 
+                FloatingActionButton(
+                  backgroundColor: Colors.black54,
+                  foregroundColor: Colors.amber,
+                  onPressed: () => escribirNumero('3'),
+                  child: const Text('3'),
+                ),
               ),
-              FloatingActionButton(
-                backgroundColor: Colors.black54,
-                foregroundColor: Colors.amber,
-                onPressed: () => escribirNumero('-'),
-                child: const Text('-'),
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              FloatingActionButton(
-                backgroundColor: Colors.black54,
-                foregroundColor: Colors.amber,
-                onPressed: () => escribirNumero('1'),
-                child: const Text('1'),
-              ),
-              FloatingActionButton(
-                backgroundColor: Colors.black54,
-                foregroundColor: Colors.amber,
-                onPressed: () => escribirNumero('2'),
-                child: const Text('2'),
-              ),
-              FloatingActionButton(
-                backgroundColor: Colors.black54,
-                foregroundColor: Colors.amber,
-                onPressed: () => escribirNumero('3'),
-                child: const Text('3'),
-              ),
-              FloatingActionButton(
-                backgroundColor: Colors.black54,
-                foregroundColor: Colors.amber,
-                onPressed: () => escribirNumero('+'),
-                child: const Text('+'),
+              Expanded(
+                child: 
+                FloatingActionButton(
+                  backgroundColor: Colors.black54,
+                  foregroundColor: Colors.amber,
+                  onPressed: () => escribirNumero('+'),
+                  child: const Text('+'),
+                ),
               ),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              
-              FloatingActionButton(
-                backgroundColor: Colors.black54,
-                foregroundColor: Colors.amber,
-                onPressed: () => escribirNumero('0'),
-                child: const Text('0'),
+              Expanded(
+                child: 
+                FloatingActionButton(
+                  backgroundColor: Colors.black54,
+                  foregroundColor: Colors.amber,
+                  onPressed: () => escribirNumero('0'),
+                  child: const Text('0'),
+                ),
               ),
-              FloatingActionButton(
-                backgroundColor: Colors.black54,
-                foregroundColor: Colors.amber,
-                onPressed: () => escribirNumero(','),
-                child: const Text(','),
+              Expanded(
+                child: 
+                FloatingActionButton(
+                  backgroundColor: Colors.black54,
+                  foregroundColor: Colors.amber,
+                  onPressed: () => escribirNumero(','),
+                  child: const Text(','),
+                ),
               ),
-              FloatingActionButton(
-                backgroundColor: Colors.black54,
-                foregroundColor: Colors.amber,
-                onPressed: calcular,
-                child: const Text('='),
+              Expanded(
+                child: 
+                FloatingActionButton(
+                  backgroundColor: Colors.black54,
+                  foregroundColor: Colors.amber,
+                  onPressed: calcular,
+                  child: const Text('='),
+                ),
               ),
             ],
           ),
