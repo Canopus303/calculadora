@@ -34,39 +34,45 @@ class _MyHomePageState extends State<MyHomePage> {
   String pantalla = '';
   String operacionAnterior = '';
   void escribirNumero(String numero) {
-  final esOperador = ['+', '-', '*', '/'].contains(numero);
+    final esOperador = ['+', '-', '*', '/'].contains(numero);
 
-  setState(() {
-    if (pantalla == 'Error' || (operacionAnterior.isNotEmpty && !esOperador)) {
-      pantalla = '';
-    }
+    setState(() {
+      if (pantalla == 'Error' || (operacionAnterior.isNotEmpty && !esOperador)) {
+        pantalla = '';
+      }
 
-    operacionAnterior = '';
-    pantalla += numero;
-  });
-}
+      operacionAnterior = '';
+      pantalla += numero;
+    });
+  }
 
   void calcular() {
-  final operacion = pantalla.trim()
-      .replaceAll('×', '*')
-      .replaceAll('÷', '/')
-      .replaceAll(',', '.');
+    final operacion = pantalla.trim()
+        .replaceAll('×', '*')
+        .replaceAll('÷', '/')
+        .replaceAll(',', '.');
 
-  if (operacion.isEmpty) return;
+    if (operacion.isEmpty) return;
 
-  String resultado;
+    String resultado;
 
-  try {
-    final expresion = GrammarParser().parse(operacion);
-    final valor = RealEvaluator(ContextModel()).evaluate(expresion);
+    try {
+      final expresion = GrammarParser().parse(operacion);
+      final valor = RealEvaluator(ContextModel()).evaluate(expresion);
 
-    resultado = valor.isFinite
-        ? valor.toString().replaceFirst(RegExp(r'\.0$'), '')
-        : 'Error';
-  } on FormatException {
-    resultado = 'Error';
-  } on ArgumentError {
-    resultado = 'Error';
+      resultado = valor.isFinite
+          ? valor.toString().replaceFirst(RegExp(r'\.0$'), '')
+          : 'Error';
+    } on FormatException {
+      resultado = 'Error';
+    } on ArgumentError {
+      resultado = 'Error';
+  }
+  void borrarTodo() {
+    setState(() {
+      pantalla = '';
+      operacionAnterior = '';
+    });
   }
 
   setState(() {
