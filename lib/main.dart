@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Calculadora',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: const Color.fromARGB(255, 129, 136, 63))),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Calculadora'),
     );
   }
 }
@@ -394,21 +394,33 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               Expanded(
-                child: 
-                FloatingActionButton(
-                  backgroundColor: Colors.black54,
-                  foregroundColor: Colors.amber,
-                  onPressed: () => escribirNumero(','),
-                  child: const Text(','),
+                child: Padding(padding: const EdgeInsets.all(3),
+                  child: 
+                  FloatingActionButton(
+                    backgroundColor: Colors.black54,
+                    foregroundColor: Colors.amber,
+                    elevation: 0,
+                    shape: RoundedSuperellipseBorder(
+                      borderRadius: BorderRadiusGeometry.circular(2000)
+                    ),
+                    onPressed: () => escribirNumero(','),
+                    child: const Text(','),
+                  ),
                 ),
               ),
               Expanded(
-                child: 
-                FloatingActionButton(
-                  backgroundColor: Colors.black54,
-                  foregroundColor: Colors.amber,
-                  onPressed: calcular,
-                  child: Icon(Icons.drag_handle),
+                child: Padding(padding: const EdgeInsets.all(2),
+                  child: 
+                  FloatingActionButton(
+                    backgroundColor: Colors.black54,
+                    foregroundColor: Colors.amber,
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadiusGeometry.circular(40)
+                    ),
+                    onPressed: calcular,
+                    child: Icon(Icons.drag_handle),
+                  ),
                 ),
               ),
             ],
